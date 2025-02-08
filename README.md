@@ -22,5 +22,11 @@ $ uv run manage.py runserver
 
 - Go to `http://127.0.0.1:8000/admin/login/`
 - Log in with the user you created
-- Go to `http://127.0.0.1:8000/impersonate/search/?next=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E%3Cinput%20value=%22`
+- Go to `http://127.0.0.1:8000/impersonate/search/?next=?next="><script>alert(document.domain)</script><input type="hidden`
 - A popup with the domain of the page should appear
+
+Try updating the project to use django-impersonate 1.9.4, and repeat the steps to see that the vulnerability is fixed.
+
+```bash
+$ uv add django-impersonate==1.9.4
+```
